@@ -286,8 +286,8 @@ func (db *Storage) Get(path string) ([]byte, error) {
 	return objects.Encode(res)
 }
 
-// GetObjList force base64 decoding and bypass sorting
-func (db *Storage) GetObjList(path string) ([]objects.Object, error) {
+// GetDecodedList force base64 decoding and bypass sorting
+func (db *Storage) GetDecodedList(path string) ([]objects.Object, error) {
 	res := []objects.Object{}
 	if !strings.Contains(path, "*") {
 		return res, errors.New("katamari: invalid pattern")
